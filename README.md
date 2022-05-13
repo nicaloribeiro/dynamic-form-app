@@ -17,3 +17,4 @@ yarn install OU npm install
 ```
 yarn android OU npm run android OU npx react-native run-android  
 ```
+- O formulário JSON está mockado no arquivo `src/formMock.js`
