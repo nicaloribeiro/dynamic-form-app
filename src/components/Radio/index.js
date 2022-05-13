@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import { RadioButton } from 'react-native-paper';
 
 export default function Radio({ options, currentSelected, handleSelect, questionId }) {
