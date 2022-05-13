@@ -37,7 +37,7 @@ export default function Photo({ currentSelected, questionId, handleUpdateFiles }
             <ScrollView horizontal>
                 {
                     result.length > 0 &&
-                    result.map((file, index) => (
+                    result.map((file) => (
                         <View key={file.id} style={{ margin: 10, alignItems: 'center', justifyContent: 'center' }}>
                             <Image  source={{ uri: file.filePath }}
                                 style={{ width: 80, height: 80, marginBottom: 10 }} />
