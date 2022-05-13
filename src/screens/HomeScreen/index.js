@@ -14,10 +14,6 @@ export default function HomeScreen({ navigation }) {
         return focusSetup;
     }, [navigation]);
 
-    useEffect(() => {
-        console.log(allForms)
-    }, [allForms]);
-
     const handleClickForm = async (id) => {
         await handleSelectForm(id)
         navigation.navigate('Form', {

@@ -29,7 +29,6 @@ export function FormsProvider({ children }) {
     const loadForms = async () => {
         const formKeys = await getAllFormsStorageKeys();
         const progress = await calculateFormProgress(formKeys);
-        console.log(progress)
         setAllForms(progress);
     };
 

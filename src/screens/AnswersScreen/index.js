@@ -37,8 +37,6 @@ s
         setCurrentFromController(formObject)
     }, [currentForm])
 
-    useEffect(() => console.log(currentFormController), [currentFormController])
-
     const handleUpdateQuestion = (questionId, questionAnswer) => {
         handleUpdateForm(currentForm.flat(), questionId, questionAnswer)
     }
