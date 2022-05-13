@@ -27,7 +27,7 @@ export default function AnswersScreen({ navigation, route }) {
 
         return componentMap[`${question.component}`]
     }
-s
+
     useEffect(() => {
         const formParsed = JSON.parse(currentForm.flat()[1])
         const formObject = formParsed.reduce((acc, curr) => {
