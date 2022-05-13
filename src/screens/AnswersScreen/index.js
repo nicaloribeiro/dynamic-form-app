@@ -20,7 +20,7 @@ export default function AnswersScreen({ navigation, route }) {
             'Input': <Input placeholder={question.placeholder} storedValue={question.answer} questionId={question.id} handleOnBlur={handleUpdateQuestion} />,
             'Photo': <></>,
             'DropdownSelect': <DropdownSelect options={question.options} currentSelected={question.answer} questionId={question.id} handleSelect={handleUpdateQuestion} />,
-            'Calendar': <Calendar />
+            'Calendar': <Calendar currentSelected={question.answer} questionId={question.id} handleChangeDate={handleUpdateQuestion}/>
         }
 
         return componentMap[`${question.component}`]
