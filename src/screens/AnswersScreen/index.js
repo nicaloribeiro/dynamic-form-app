@@ -6,6 +6,7 @@ import Radio from '../../components/Radio';
 import DropdownSelect from '../../components/DropdownSelect';
 import Calendar from '../../components/Calendar';
 import MultiSelect from '../../components/MultiSelect';
+import Photo from '../../components/Photo';
 
 export default function AnswersScreen({ navigation, route }) {
 
@@ -19,15 +20,14 @@ export default function AnswersScreen({ navigation, route }) {
             'Radio': <Radio options={question.options} currentSelected={question.answer} questionId={question.id} handleSelect={handleUpdateQuestion} />,
             'MultiSelect': <MultiSelect options={question.options} currentSelected={question.answer} questionId={question.id} handleSelect={handleUpdateQuestion} />,
             'Input': <Input placeholder={question.placeholder} storedValue={question.answer} questionId={question.id} handleOnBlur={handleUpdateQuestion} />,
-            'Photo': <></>,
+            'Photo': <Photo currentSelected={question.answer} questionId={question.id} handleUpdateFiles={handleUpdateQuestion}/>,
             'DropdownSelect': <DropdownSelect options={question.options} currentSelected={question.answer} questionId={question.id} handleSelect={handleUpdateQuestion} />,
             'Calendar': <Calendar currentSelected={question.answer} questionId={question.id} handleChangeDate={handleUpdateQuestion}/>
         }
 
         return componentMap[`${question.component}`]
     }
-
-
+s
     useEffect(() => {
         const formParsed = JSON.parse(currentForm.flat()[1])
         const formObject = formParsed.reduce((acc, curr) => {
@@ -65,14 +65,6 @@ export default function AnswersScreen({ navigation, route }) {
                             null
                     ))
             }
-            {/* <View style={styles.card}>
-
-                <DropdownSelect />
-            </View> */}
-            {/* <View style={styles.card}>
-                <Text style={styles.questionText}>Questao 1</Text>
-                <Input placeholder="Placeholder" handleOnBlur={handleUpdateQuestion} />
-            </View> */}
         </ScrollView>
     )
 }
