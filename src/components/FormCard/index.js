@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { ProgressBar, Colors } from 'react-native-paper';
+import { ProgressBar } from 'react-native-paper';
 
 const FormCard = ({ formNumber, totalComplete, handlePress }) => {
 
