@@ -5,6 +5,7 @@ import Input from '../../components/Input';
 import Radio from '../../components/Radio';
 import DropdownSelect from '../../components/DropdownSelect';
 import Calendar from '../../components/Calendar';
+import MultiSelect from '../../components/MultiSelect';
 
 export default function AnswersScreen({ navigation, route }) {
 
@@ -16,7 +17,7 @@ export default function AnswersScreen({ navigation, route }) {
     const componentMap = (question) => {
         const componentMap = {
             'Radio': <Radio options={question.options} currentSelected={question.answer} questionId={question.id} handleSelect={handleUpdateQuestion} />,
-            'MultiSelect': <></>,
+            'MultiSelect': <MultiSelect options={question.options} currentSelected={question.answer} questionId={question.id} handleSelect={handleUpdateQuestion} />,
             'Input': <Input placeholder={question.placeholder} storedValue={question.answer} questionId={question.id} handleOnBlur={handleUpdateQuestion} />,
             'Photo': <></>,
             'DropdownSelect': <DropdownSelect options={question.options} currentSelected={question.answer} questionId={question.id} handleSelect={handleUpdateQuestion} />,
