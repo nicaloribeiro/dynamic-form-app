@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { Button } from 'react-native-paper';
 import DatePicker from 'react-native-date-picker';
 
@@ -8,7 +8,6 @@ export default function Calendar({ currentSelected, questionId, handleChangeDate
     const [open, setOpen] = useState(false)
     return (
         <>
-
             <Text style={{ fontSize: 16, textAlign: 'center', marginBottom: 20 }}>{currentSelected ? `Data: ${new Date(currentSelected).toLocaleDateString('pt-BR')}` : 'Nenhuma data selecionada'}</Text>
             <Button style={{ backgroundColor: 'white', margin: 5 }} onPress={() => setOpen(true)}>
                 Selecionar data
@@ -16,7 +15,6 @@ export default function Calendar({ currentSelected, questionId, handleChangeDate
             <Button style={{ backgroundColor: 'white', margin: 5 }} onPress={() => handleChangeDate(questionId, null)}>
                 Remover data
             </Button>
-
 
             <DatePicker
                 modal
